@@ -1,0 +1,48 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<project name="dbeaver" basedir=".">
+
+  <dirname property="app.basedir" file="${ant.file.dbeaver}"/>
+  <property name="build.properties" value="${app.basedir}/build.properties"/>
+  <property file="${build.properties}"/>
+
+  <!-- Load Portapps core build -->
+  <property name="core.basedir" location="${app.basedir}\${core.dir}"/>
+  <fail unless="core.basedir" message="Core directory '${core.basedir}' not found in ${core.basedir}"/>
+  <echo message="Core found in ${core.basedir}" level="debug"/>
+
+  <!-- Import build-app.xml  -->
+  <import file="${core.basedir}\.build\build-app.xml"/>
+
+  <!-- Targets -->
+  <target name="release" depends="release.app" description="Release"/>
+
+  <target name="prepare">
+    <echo message="Preparing release..."/>
+
+    <if>
+      <equals arg1="${atf.arch}" arg2="win32"/>
+      <then>
+        <get src="${jre.win32.url}" dest="${tmp.path}\${jre.folder}-win32.tar.gz" skipexisting="true"/>
+        <gunzip src="${tmp.path}\${jre.folder}-win32.tar.gz"/>
+        <untar src="${tmp.path}\${jre.folder}-win32.tar" dest="${tmp.path}"/>
+        <copydir src="${tmp.path}\${jre.folder}" dest="${extract.path}\dbeaver\jre"/>
+      </then>
+      <else>
+        <get src="${jre.win64.url}" dest="${tmp.path}\${jre.folder}-win64.tar.gz" skipexisting="true"/>
+        <gunzip src="${tmp.path}\${jre.folder}-win64.tar.gz"/>
+        <untar src="${tmp.path}\${jre.folder}-win64.tar" dest="${tmp.path}"/>
+        <copydir src="${tmp.path}\${jre.folder}" dest="${extract.path}\dbeaver\jre"/>
+      </else>
+    </if>
+
+    <move todir="${tmp.path}\extract2">
+      <fileset dir="${extract.path}\dbeaver"/>
+    </move>
+    <delete dir="${extract.path}"/>
+    <move todir="${extract.path}">
+      <fileset dir="${tmp.path}\extract2"/>
+    </move>
+
+  </target>
+
+</project>
