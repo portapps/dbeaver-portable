@@ -1,5 +1,9 @@
 # Changelog
 
+## 5.2.5-3 (2018/11/19)
+
+* Upgrade to DBeaver 5.2.5
+
 ## 5.2.4-2 (2018/11/16)
 
 * Upgrade to DBeaver 5.2.4
