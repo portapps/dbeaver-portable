@@ -2,7 +2,7 @@
 
 ## 5.2.5-4 (2018/11/29)
 
-* Change drivers location to `data\.metadata\drivers`
+* Change drivers location to `data\.metadata\drivers` (Issue #1)
 * Change debug and queries logs location to `data\.metadata\logs`
 * Disable auto update check
 
