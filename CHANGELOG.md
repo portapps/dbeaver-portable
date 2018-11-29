@@ -1,5 +1,11 @@
 # Changelog
 
+## 5.2.5-4 (2018/11/29)
+
+* Change drivers location to `data\.metadata\drivers`
+* Change debug and queries logs location to `data\.metadata\logs`
+* Disable auto update check
+
 ## 5.2.5-3 (2018/11/19)
 
 * Upgrade to DBeaver 5.2.5
