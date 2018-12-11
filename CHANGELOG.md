@@ -1,5 +1,9 @@
 # Changelog
 
+## 5.3.0-5 (2018/12/11)
+
+* Upgrade to DBeaver 5.3.0
+
 ## 5.2.5-4 (2018/11/29)
 
 * Change drivers location to `data\.metadata\drivers` (Issue #1)
