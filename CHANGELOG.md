@@ -1,5 +1,10 @@
 # Changelog
 
+## 5.3.4-1 (2019/02/04)
+
+* Upgrade to DBeaver 5.3.4
+* Switch to Travis CI
+
 ## 5.3.3-8 (2019/01/24)
 
 * Upgrade to DBeaver 5.3.3
