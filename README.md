@@ -3,7 +3,7 @@
 <p align="center">
   <a href="https://portapps.github.io/app/dbeaver-portable/#download"><img src="https://img.shields.io/github/release/portapps/dbeaver-portable.svg?style=flat-square" alt="GitHub release"></a>
   <a href="https://portapps.github.io/app/dbeaver-portable/#download"><img src="https://img.shields.io/github/downloads/portapps/dbeaver-portable/total.svg?style=flat-square" alt="Total downloads"></a>
-  <a href="https://ci.appveyor.com/project/portapps/dbeaver-portable"><img src="https://img.shields.io/appveyor/ci/portapps/dbeaver-portable.svg?style=flat-square" alt="AppVeyor"></a>
+  <a href="https://travis-ci.com/portapps/dbeaver-portable"><img src="https://img.shields.io/travis/com/portapps/dbeaver-portable/master.svg?style=flat-square" alt="Build Status"></a>
   <a href="https://goreportcard.com/report/github.com/portapps/dbeaver-portable"><img src="https://goreportcard.com/badge/github.com/portapps/dbeaver-portable?style=flat-square" alt="Go Report"></a>
   <a href="https://www.codacy.com/app/portapps/dbeaver-portable"><img src="https://img.shields.io/codacy/grade/73cd2200303640ab8047af5d122eec08.svg?style=flat-square" alt="Code Quality"></a>
   <a href="https://www.paypal.com/cgi-bin/webscr?cmd=_s-xclick&hosted_button_id=WQD7AQGPDEPSG"><img src="https://img.shields.io/badge/donate-paypal-7057ff.svg?style=flat-square" alt="Donate Paypal"></a>
