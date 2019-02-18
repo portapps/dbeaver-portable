@@ -1,5 +1,10 @@
 # Changelog
 
+## 5.3.5-2 (2019/02/18)
+
+* Upgrade to DBeaver 5.3.5
+* Add checksums (portapps/portapps#11)
+
 ## 5.3.4-1 (2019/02/04)
 
 * Upgrade to DBeaver 5.3.4
