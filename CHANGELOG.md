@@ -1,5 +1,10 @@
 # Changelog
 
+## 6.0.0-3 (2019/03/15)
+
+* Upgrade to DBeaver 6.0.0
+* Portapps 1.20.2
+
 ## 5.3.5-2 (2019/02/18)
 
 * Upgrade to DBeaver 5.3.5
