@@ -1,6 +1,6 @@
 # Changelog
 
-## 6.0.1-4 (2019/03/25)
+## 6.0.1-5 (2019/03/25)
 
 * DBeaver 6.0.1 (no more 32-bit release)
 * Portapps 1.20.3
