@@ -12,13 +12,15 @@
 
 ## Notice of Non-Affiliation and Disclaimer
 
-Portapps is not affiliated, associated, authorized, endorsed by, or in any way officially connected with DBeaver, or any of its subsidiaries or its affiliates. The official DBeaver website can be found at https://dbeaver.io/.
+Portapps is not affiliated, associated, authorized, endorsed by, or in any way officially connected with DBeaver™, or any of its subsidiaries or its affiliates.
 
-The name DBeaver® as well as related names, marks, emblems and images are registered trademarks of their respective owners.
+The official DBeaver™ website can be found at https://dbeaver.io/.
+
+The name DBeaver™ as well as related names, marks, emblems and images are registered trademarks of their respective owners.
 
 ## About
 
-DBeaver portable app made with 🚀 [Portapps](https://portapps.io).<br />
+DBeaver™ portable app made with 🚀 [Portapps](https://portapps.io).<br />
 Documentation and downloads can be found on https://portapps.io/app/dbeaver-portable/
 
 ## How can I help ?
