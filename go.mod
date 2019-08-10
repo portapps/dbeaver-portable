@@ -4,5 +4,5 @@ go 1.12
 
 require (
 	github.com/magiconair/properties v1.8.0
-	github.com/portapps/portapps v1.24.1
+	github.com/portapps/portapps v1.25.0
 )
