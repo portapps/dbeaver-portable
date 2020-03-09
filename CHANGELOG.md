@@ -1,5 +1,10 @@
 # Changelog
 
+## 7.0.0-28 (2020/03/09)
+
+* DBeaver 7.0.0
+* Upgrade to OpenJDK 11 (JRE 11.0.6_10)
+
 ## 6.3.5-27 (2020/02/20)
 
 * DBeaver 6.3.5
