@@ -7,20 +7,21 @@ import (
 	"strings"
 
 	"github.com/magiconair/properties"
-	. "github.com/portapps/portapps"
-	"github.com/portapps/portapps/pkg/utl"
+	"github.com/portapps/portapps/v2"
+	"github.com/portapps/portapps/v2/pkg/utl"
+	"github.com/rs/zerolog/log"
 )
 
 var (
-	app *App
+	app *portapps.App
 )
 
 func init() {
 	var err error
 
 	// Init app
-	if app, err = New("dbeaver-portable", "DBeaver"); err != nil {
-		Log.Fatal().Err(err).Msg("Cannot initialize application. See log file for more info.")
+	if app, err = portapps.New("dbeaver-portable", "DBeaver"); err != nil {
+		log.Fatal().Err(err).Msg("Cannot initialize application. See log file for more info.")
 	}
 }
 
@@ -47,20 +48,20 @@ func main() {
 	_, _, _ = defaultProps.Set("ui.drivers.home", formatPath(driversPath))
 
 	if !utl.Exists(corePrefsFile) {
-		Log.Info().Msg("Creating default props...")
+		log.Info().Msg("Creating default props...")
 		if err := utl.WriteToFile(corePrefsFile, defaultProps.String()); err != nil {
-			Log.Error().Err(err).Msg("Cannot write default props to org.jkiss.dbeaver.core.prefs")
+			log.Error().Err(err).Msg("Cannot write default props to org.jkiss.dbeaver.core.prefs")
 		}
 	} else {
-		Log.Info().Msg("Loading org.jkiss.dbeaver.core.prefs file...")
+		log.Info().Msg("Loading org.jkiss.dbeaver.core.prefs file...")
 		corePrefsProps, err := properties.LoadFile(corePrefsFile, properties.UTF8)
 		if err != nil {
-			Log.Error().Err(err).Msg("Cannot load org.jkiss.dbeaver.core.prefs file")
+			log.Error().Err(err).Msg("Cannot load org.jkiss.dbeaver.core.prefs file")
 		}
 		corePrefsProps.Merge(defaultProps)
-		Log.Info().Msg("Writing to org.jkiss.dbeaver.core.prefs")
+		log.Info().Msg("Writing to org.jkiss.dbeaver.core.prefs")
 		if err := utl.WriteToFile(corePrefsFile, corePrefsProps.String()); err != nil {
-			Log.Error().Err(err).Msg("Cannot write to org.jkiss.dbeaver.core.prefs")
+			log.Error().Err(err).Msg("Cannot write to org.jkiss.dbeaver.core.prefs")
 		}
 	}
 
