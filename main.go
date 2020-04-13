@@ -8,8 +8,8 @@ import (
 
 	"github.com/magiconair/properties"
 	"github.com/portapps/portapps/v2"
+	"github.com/portapps/portapps/v2/pkg/log"
 	"github.com/portapps/portapps/v2/pkg/utl"
-	"github.com/rs/zerolog/log"
 )
 
 var (

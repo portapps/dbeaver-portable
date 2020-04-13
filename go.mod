@@ -4,6 +4,5 @@ go 1.13
 
 require (
 	github.com/magiconair/properties v1.8.1
-	github.com/portapps/portapps/v2 v2.0.5
-	github.com/rs/zerolog v1.18.0
+	github.com/portapps/portapps/v2 v2.1.2
 )
