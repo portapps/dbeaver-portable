@@ -10,6 +10,8 @@ github.com/josephspurrier/goversioninfo v1.2.0 h1:tpLHXAxLHKHg/dCU2AAYx08A4m+v9/
 github.com/josephspurrier/goversioninfo v1.2.0/go.mod h1:AGP2a+Y/OVJZ+s6XM4IwFUpkETwvn0orYurY8qpw1+0=
 github.com/magiconair/properties v1.8.1 h1:ZC2Vc7/ZFkGmsVC9KvOjumD+G5lXy2RtTKyzRKO2BQ4=
 github.com/magiconair/properties v1.8.1/go.mod h1:PppfXfuXeibc/6YijjN8zIbojt8czPbwD3XqdrwzmxQ=
+github.com/magiconair/properties v1.8.2 h1:znVR8Q4g7/WlcvsxLBRWvo+vtFJUAbDn3w+Yak2xVMI=
+github.com/magiconair/properties v1.8.2/go.mod h1:y3VJvCyxH9uVvJTWEGAELF3aiYNyPKd5NZ3oSwXrF60=
 github.com/mitchellh/mapstructure v1.3.3 h1:SzB1nHZ2Xi+17FP0zVQBHIZqvwRN9408fJO8h+eeNA8=
 github.com/mitchellh/mapstructure v1.3.3/go.mod h1:bFUtVrKA4DC2yAKiSyO/QUcy7e+RRV2QTWOzhPopBRo=
 github.com/pkg/errors v0.8.1/go.mod h1:bwawxfHBFNV+L2hUp1rHADufV3IMtnDRdf1r5NINEl0=
