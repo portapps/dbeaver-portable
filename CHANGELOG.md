@@ -4,6 +4,7 @@
 
 * DBeaver 21.0.5
 * Use provided jre (#17)
+* Bump github.com/magiconair/properties from 1.8.4 to 1.8.5 (#29)
 
 ## 21.0.0-42 (2021/03/16)
 
