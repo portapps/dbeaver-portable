@@ -19,20 +19,6 @@
   <target name="prepare">
     <echo message="Preparing release..."/>
 
-    <if>
-      <equals arg1="${atf.arch}" arg2="win32"/>
-      <then>
-        <get src="${jre.win32.url}" dest="${tmp.path}\${jre.folder}-win32.zip" skipexisting="true" verbose="on"/>
-        <unzip src="${tmp.path}\${jre.folder}-win32.zip" dest="${tmp.path}"/>
-        <copydir src="${tmp.path}\${jre.folder}" dest="${extract.path}\dbeaver\jre"/>
-      </then>
-      <else>
-        <get src="${jre.win64.url}" dest="${tmp.path}\${jre.folder}-win64.zip" skipexisting="true" verbose="on"/>
-        <unzip src="${tmp.path}\${jre.folder}-win64.zip" dest="${tmp.path}"/>
-        <copydir src="${tmp.path}\${jre.folder}" dest="${extract.path}\dbeaver\jre"/>
-      </else>
-    </if>
-
     <move todir="${tmp.path}\extract2">
       <fileset dir="${extract.path}\dbeaver" defaultexcludes="no"/>
     </move>
