@@ -1,5 +1,10 @@
 # Changelog
 
+## 21.0.5-43 (2021/05/22)
+
+* DBeaver 21.0.5
+* Use provided jre (#17)
+
 ## 21.0.0-42 (2021/03/16)
 
 * DBeaver 21.0.0
