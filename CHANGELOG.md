@@ -1,5 +1,11 @@
 # Changelog
 
+## 22.2.1-45 (2022/10/04)
+
+* DBeaver 22.2.1
+* Portapps 3.6.0
+* Bump github.com/magiconair/properties from 1.8.5 to 1.8.6
+
 ## 21.3.2-44 (2022/01/08)
 
 * DBeaver 21.3.2
