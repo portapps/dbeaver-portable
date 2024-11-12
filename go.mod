@@ -4,7 +4,7 @@ go 1.23
 
 require (
 	github.com/magiconair/properties v1.8.7
-	github.com/portapps/portapps/v3 v3.14.1
+	github.com/portapps/portapps/v3 v3.15.0
 )
 
 require (
