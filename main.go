@@ -1,9 +1,9 @@
 //go:generate go install -v github.com/josephspurrier/goversioninfo/cmd/goversioninfo
-//go:generate goversioninfo -icon=res/papp.ico -manifest=res/papp.manifest
 package main
 
 import (
 	"os"
+	"path/filepath"
 	"strings"
 
 	"github.com/magiconair/properties"
@@ -27,22 +27,22 @@ func init() {
 
 func main() {
 	utl.CreateFolder(app.DataPath)
-	app.Process = utl.PathJoin(app.AppPath, "dbeaver.exe")
+	app.Process = filepath.Join(app.AppPath, "dbeaver.exe")
 	app.Args = []string{
 		"-data",
 		app.DataPath,
 		"-vm",
-		utl.PathJoin(app.AppPath, "jre", "bin", "javaw.exe"),
+		filepath.Join(app.AppPath, "jre", "bin", "javaw.exe"),
 	}
 
 	driversPath := utl.CreateFolder(app.DataPath, ".metadata", "drivers")
 	logsPath := utl.CreateFolder(app.DataPath, ".metadata", "logs")
 	corePrefsPath := utl.CreateFolder(app.DataPath, ".metadata", ".plugins", "org.eclipse.core.runtime", ".settings")
-	corePrefsFile := utl.PathJoin(corePrefsPath, "org.jkiss.dbeaver.core.prefs")
+	corePrefsFile := filepath.Join(corePrefsPath, "org.jkiss.dbeaver.core.prefs")
 
 	defaultProps := properties.NewProperties()
 	_, _, _ = defaultProps.Set("dialog.default.folder", formatPath(app.DataPath))
-	_, _, _ = defaultProps.Set("logs.debug.location", formatPath(utl.PathJoin(logsPath, "dbeaver-debug.log")))
+	_, _, _ = defaultProps.Set("logs.debug.location", formatPath(filepath.Join(logsPath, "dbeaver-debug.log")))
 	_, _, _ = defaultProps.Set("qm.logDirectory", formatPath(logsPath))
 	_, _, _ = defaultProps.Set("ui.auto.update.check", "false")
 	_, _, _ = defaultProps.Set("ui.drivers.home", formatPath(driversPath))
