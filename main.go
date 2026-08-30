@@ -8,8 +8,8 @@ import (
 
 	"github.com/magiconair/properties"
 	"github.com/portapps/portapps/v3"
+	"github.com/portapps/portapps/v3/pkg/files"
 	"github.com/portapps/portapps/v3/pkg/log"
-	"github.com/portapps/portapps/v3/pkg/utl"
 )
 
 var (
@@ -26,7 +26,9 @@ func init() {
 }
 
 func main() {
-	utl.CreateFolder(app.DataPath)
+	if err := os.MkdirAll(app.DataPath, 0o755); err != nil {
+		log.Fatal().Err(err).Msg("Cannot create data path")
+	}
 	app.Process = filepath.Join(app.AppPath, "dbeaver.exe")
 	app.Args = []string{
 		"-data",
@@ -35,9 +37,14 @@ func main() {
 		filepath.Join(app.AppPath, "jre", "bin", "javaw.exe"),
 	}
 
-	driversPath := utl.CreateFolder(app.DataPath, ".metadata", "drivers")
-	logsPath := utl.CreateFolder(app.DataPath, ".metadata", "logs")
-	corePrefsPath := utl.CreateFolder(app.DataPath, ".metadata", ".plugins", "org.eclipse.core.runtime", ".settings")
+	driversPath := filepath.Join(app.DataPath, ".metadata", "drivers")
+	logsPath := filepath.Join(app.DataPath, ".metadata", "logs")
+	corePrefsPath := filepath.Join(app.DataPath, ".metadata", ".plugins", "org.eclipse.core.runtime", ".settings")
+	for _, dir := range []string{driversPath, logsPath, corePrefsPath} {
+		if err := os.MkdirAll(dir, 0o755); err != nil {
+			log.Fatal().Err(err).Msgf("Cannot create directory %s", dir)
+		}
+	}
 	corePrefsFile := filepath.Join(corePrefsPath, "org.jkiss.dbeaver.core.prefs")
 
 	defaultProps := properties.NewProperties()
@@ -47,9 +54,9 @@ func main() {
 	_, _, _ = defaultProps.Set("ui.auto.update.check", "false")
 	_, _, _ = defaultProps.Set("ui.drivers.home", formatPath(driversPath))
 
-	if !utl.Exists(corePrefsFile) {
+	if !files.Exists(corePrefsFile) {
 		log.Info().Msg("Creating default props...")
-		if err := utl.WriteToFile(corePrefsFile, defaultProps.String()); err != nil {
+		if err := os.WriteFile(corePrefsFile, []byte(defaultProps.String()), 0o644); err != nil {
 			log.Error().Err(err).Msg("Cannot write default props to org.jkiss.dbeaver.core.prefs")
 		}
 	} else {
@@ -60,7 +67,7 @@ func main() {
 		}
 		corePrefsProps.Merge(defaultProps)
 		log.Info().Msg("Writing to org.jkiss.dbeaver.core.prefs")
-		if err := utl.WriteToFile(corePrefsFile, corePrefsProps.String()); err != nil {
+		if err := os.WriteFile(corePrefsFile, []byte(corePrefsProps.String()), 0o644); err != nil {
 			log.Error().Err(err).Msg("Cannot write to org.jkiss.dbeaver.core.prefs")
 		}
 	}
@@ -70,5 +77,5 @@ func main() {
 }
 
 func formatPath(path string) string {
-	return strings.Replace(strings.Replace(path, `/`, `\`, -1), `\`, `\\`, -1)
+	return strings.ReplaceAll(filepath.FromSlash(path), `\`, `\\`)
 }
