@@ -3,7 +3,7 @@ module github.com/portapps/dbeaver-portable
 go 1.26.0
 
 require (
-	github.com/magiconair/properties v1.8.10
+	github.com/magiconair/properties v1.18.12
 	github.com/portapps/portapps/v3 v3.19.0
 )
 
