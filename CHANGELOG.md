@@ -1,5 +1,12 @@
 # Changelog
 
+## 26.2.0-52 (2026/09/20)
+
+* DBeaver 26.2.0
+* Portapps 3.19.0
+* Bump github.com/josephspurrier/goversioninfo from 1.5.0 to 1.7.0
+* Bump github.com/magiconair/properties from 1.8.10 to 1.18.12
+
 ## 25.3.2-51 (2026/01/07)
 
 * DBeaver 25.3.2
